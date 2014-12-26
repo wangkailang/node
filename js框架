@@ -1,0 +1,34 @@
+//将时间戳转化为任意格式的日期格式
+	function dateformat(date, fmt) {
+	    	if(!date) return;
+			date = new Date(date);
+			fmt = fmt || 'yyyy-MM-dd HH:mm:ss';
+			var o = {
+				'M+': date.getMonth() + 1,
+				'd+': date.getDate(),
+				'H+': date.getHours(),
+				'm+': date.getMinutes(),
+				's+': date.getSeconds(),
+				'q+': Math.floor((date.getMonth() + 3) / 3),
+				'S': date.getMilliseconds()
+			};
+			if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (date.getFullYear() + '').substr(4 - RegExp.$1.length));
+			for (var k in o)
+				if (new RegExp('(' + k + ')').test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (('00' + o[k]).substr(('' + o[k]).length)));
+			return fmt;
+		}
+		var time = dateformat(1419327893,'yyyy MM dd HH:mm:ss');
+		console.log(time);
+
+		//一段文字超过一定字节后，超过部分用“...”表示
+		function ellipsis(str,limit){
+		if(!str || typeof str !='string') return '';
+			limit=limit|| 20;
+			var len=str.length;
+			if(len>limit){
+				str=str.substr(0,limit)+'...';	
+			}
+			return str;
+		}
+		var s = "阿萨计算机的阿达撒开大厦第四季度";
+		console.log(ellipsis(s,10));
