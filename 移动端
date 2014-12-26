@@ -1,0 +1,45 @@
+手势操作
+  touchstart
+  touchmove
+  touchend
+  
+  touchcancel
+click事件在手机端会延迟300ms
+touch事件支持多点触摸
+
+Canvas & GPU render（优化：canvas代替image标签）
+触发物理设配GPU渲染
+用canvas在手机端加载图片
+drawImage API
+drawImage(image,x,y)
+(在canvas上绘制图片)
+drawImage(image,x,y，width,height)
+(在canvas上缩放并绘制图片)
+image参数（Image Object）
+预加载图片
+图片按比例缩放
+
+css3 Animation
+@keyframes（关键帧）
+animation-name（动画名称）
+animation-duration（动画持续时间）
+animation-delay（延迟执行时间）
+animation-timing-function（动画形变函数指定）
+animation-play-state（播放状态指定）
+
+实例：@-webkit-keyframes myfirst{
+	0  %:{background:red;}
+	25%:{background:yellow;}
+	50%:{background:blue;}
+	100%:{background:green;}
+	}
+	div{
+	-webkit-animation-name:myfirst;
+	-webkit-animation-duration:5s;
+	-webkit-animation-timing-function:linear;
+	}
+webkitAnimationEnd（动画结束时监听）
+
+框架：
+zepto.js
+http://zeptojs.com/
