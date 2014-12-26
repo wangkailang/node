@@ -1,0 +1,83 @@
+相关：
+邮箱：wangkailang@ycombo.com 
+node平台要求：express+jade+less
+原型地址：
+https://moqups.com/kingslang/g8vGc6Ue/p:a6628ee1d
+五个页面的前后端对接
+
+host修改
+C:\Windows\System32\drivers\etc\hosts
+
+express——基于node.js的web框架
+1，基于json的API
+2，单页面web应用程序
+3，实时web应用程序
+
+express站点建立
+找到指定目录-express express_example-cd express_example && install-node app.js或者bin\www
+
+mongodb——存储session信息，实现用户登录功能
+用户登录功能描述：
+	1，用户输入注册的用户名和密码实现登录
+	2，登录后页面自动跳转，且用户保持登录状态
+	3，浏览器关闭用户需要重新登录
+	
+邮件——worktile项目在线协作平台的使用
+
+html to jade在线转换：
+http://html2jade.org/
+
+bootstrap日期控件：
+http://tarruda.github.io/bootstrap-datetimepicker/
+
+前后台接口问题
+后台数据打印：
+	url+?datadump
+后台管理接口
+http://121.40.152.221:3000/redmine/projects/account/wiki
+
+codeing在线协作平台
+https://coding.net/user/projects/create
+
+https://coding.net/u/demo/p/node-2048/git
+https://coding.net/u/demo/project/joined
+
+视频学习——向黑客一样写命令行
+http://talk.linuxtoy.org/using-cli/#1
+
+node.js社区
+https://cnodejs.org/topic/543e462dde346cb164430191
+
+Node.js & HTML5 论坛
+http://forjs.org/
+
+Develop a RESTful API Using Node.js With Express and Mongoose
+http://pixelhandler.com/posts/develop-a-restful-api-using-nodejs-with-express-and-mongoose
+	
+	
+
+node学习资料
+
+grunt——js项目构建工具
+自动化。对于需要反复重复的任务，例如压缩（minification）、编译、单元测试、linting等，自动化工具可以减轻你的劳动，简化你的工作。当你正确配置好了任务，任务运行器就会自动帮你或你的小组完成大部分无聊的工作。
+
+supervisor(调试工具)类似node
+express学习网址
+http://expressjs.jser.us/guide.html
+
+jade官网
+http://jade-lang.com/
+
+node安装
+选择最新版32位的（64位的有问题）
+用express+jade+stylus搭建练习平台
+cmd-找到文件创建路径-kmdir demo（创建文件夹demo）-进入路径domo下-npm install -c或者--css stylus(创建模板和jade文件)-npm install(在demo文件夹下面添加node)
+
+（与jade类似的编码模式有ejs，swing）
+jade编写语法
+1，使用键盘上的“Tab”时会出现问题（sublime中间tab缩进改为空格）
+2，可以使用zendCoding模式编写jade
+
+stylus简化了css的样式。（运行页面时，style.styl文件会运行，生成静态css并覆盖style.css，办法是找到package文件，将其代码最后一行“"stylus": "0.42.3"”删去）
+less学习
+http://www.ibm.com/developerworks/cn/web/1207_zhaoch_lesscss/
