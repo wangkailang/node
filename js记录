@@ -1,0 +1,19 @@
+tab.jade通过判定url改变tab列表的样式（1,为相对url的页面的li添加.active;  2,获取li下面a标签的href并与当前页的url对比）
+(function(){
+            var a=$('#tab').children(),lps=location.pathname.split("/")[1];
+            a.each(function(){
+                var t=$(this),ta=t.children('a').attr("href").split("/")[1];
+                if(ta==lps){
+                    t.addClass('active')
+                }
+                })
+            })();
+（使用闭包函数，避免变量污染）
+
+input [ checked ]  的判断（通过value的不同来添加checked）
+function dw_checked(na,v){
+            $(":radio[name='"+na+"'][value="+v+"]").attr('checked','checked')
+        };
+
+七牛云存储的文件上传功能
+https://github.com/qiniupd/qiniu-js-sdk
