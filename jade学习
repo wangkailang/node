@@ -1,0 +1,62 @@
+jade使用两个特殊的字符来决定应该如何翻译代码。
+第一个字符是减号(-),用于告诉随后的代码应当被执行
+第二个字符是等号(=),它告诉解释器要对代码进行演算，转义，然后输出。
+
+变量
+-var foo=bar;  //代码被执行并且不会返回任何输出。jade仅将变量foo设置为bar
+  p I want to learn to use variable.Foo is #{foo}!
+“#{变量}” 这个特殊语法告诉jade用将“变量”替换为字符串。
+
+循环
+-users=['Sally','Joseph','Michael','Sanjay']
+-each user in users(也可写成-for user in users)
+  p=user
+编译以后是：
+<p>Sally</p>
+<p>Joseph</p>
+<p>Michael</p>
+<p>Sanjay</p>
+
+对对象进行迭代
+-obj={
+	first_name:'George',
+	surname:'Ornbo'
+	}
+-each val,key in obj
+  li #{key}: #{val}
+编译以后：
+<li>first_name: George</li>
+<li>surname: Ornbo</li>
+
+条件
+-awake=false
+-if(awake)
+  p  You are awake !  Make coffee !
+-else
+  p You are sleeping
+
+内联（inline）JavaScript
+script
+  alert ('You can execute inline JavaScript through Jade')
+
+包含（include）
+大多数网站都会有在站点的每个页面上都会出现的页面的组成部分，比如：
+	页眉；
+	页脚；
+	边栏。
+jade通过include关键字后跟想要包含的模板来支持包含功能。
+html
+  body
+     include includes/header  //文件位置为views/includes/header
+
+Mixin
+jade的Mixin是许多其他模板引擎所不具备的功能。如果发现自己必须一次又一次地重复冇些代码块，使用mixin可以让代码块
+保持可维护并且整洁的良好方法。
+在循环中输出数据是可以使用mixin的一个示例，定义一个mixin：
+minxi users(users)
+  ul
+    each user in users
+      li=user
+一旦定义了mixin，就可以使用它并且在模板中重用：
+-user=['Krist','Kurt','Dave']
+mixin users(users)
