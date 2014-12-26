@@ -1,0 +1,37 @@
+【注】摘抄自：
+http://www.cnblogs.com/wisdomsoft/archive/2010/11/03/1867935.html
+http://paranimage.com/mastering-advanced-css-selectors/
+
+一、属性选择器
+1·[att=value]
+比如 [class="aa"]，查找class的值是aa的元素。
+
+2·[att ~=value]
+比如[class="aa bb cc"]，查找class 是 aa、bb、cc的元素，值中间用空格隔开。
+
+3·[att|=value]
+比如[class|="aa"]，查找class的值是 aa-xx元素，值是aa后面必须带个“-”， xx代表任意字符。
+
+4·[att^=value]
+比如[class^="a"]，查找class的值以a开头的元素。
+
+5·[att$=value]
+比如[class$="a"]，查找class的值只要包含a的元素，无论位置在哪里。
+
+6·[att*=value]
+比如[class*="a"]，查找class的值以a结束的元素。
+
+二、子选择器
+子选择器用符号 “>” 表示，他表示查找此元素的第一代子元素，而不是css的继承。
+
+三、兄弟组合
+兄弟选择器用“+” 表示，他查找加号之前的标签相邻的下一个元素，用兄弟选择器必须达到两个条件，加好前后的两个元素必须在同一个标签下并且加号后面的标签必须紧接在加号前的元素的后面。
+
+四、动态伪类
+动态伪类就是，当用户与网站产生交互操作的时候才发生的。比如 active、hover、focus。
+
+active是鼠标按下的时候
+
+hover是鼠标经过的时候
+
+focus是控件获取焦点的时候
