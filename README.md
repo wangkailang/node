@@ -1,7 +1,7 @@
 node
 ====
 
-项目：【玩聚北京web((http://ycombo.com) 和wap网站(微公Combo_beijing)】
+项目：【玩聚北京web((http://ycombo.com) 和wap网站(微公Combo_beijing wechat.ycombo.com/list)】
 node的学习记录总结
 记录内容包括：
 node搭建
