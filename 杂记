@@ -81,3 +81,5 @@ jade编写语法
 stylus简化了css的样式。（运行页面时，style.styl文件会运行，生成静态css并覆盖style.css，办法是找到package文件，将其代码最后一行“"stylus": "0.42.3"”删去）
 less学习
 http://www.ibm.com/developerworks/cn/web/1207_zhaoch_lesscss/
+
+node——http://blog.csdn.net/dan_blog/article/details/7878272
