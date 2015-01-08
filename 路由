@@ -15,4 +15,27 @@ express获取参数有三种方法：
   <input type="submit" value="Sign In"/>
 </form> 
 在输入框中出入“wkl”，点击“Sing In”按钮当前url变为 127.0.0.1:index?login_name=wkl
+
+
+前端js处理特殊字符串
+客户端
+ location = '/personal/phonebind/invitation?'+ $.param(obj);
+路由器
+router.get('/phonebind/invitation',function(req,res,next){
+	res.render('order/detailMobile',{data:req.query});
+});
+获取data并将其转化为字符串
+  var data1=!{JSON.stringify(data)};//转为json
+  var data2 = $.param(data1);转为字符串
+  $('#dw_status').attr('hr','/invitation/tocreate?'+data2);
+  
+录：
+序列化一个 key/value 对象：
+ var params = { width:1900, height:1200 };
+ var str = jQuery.param(params);
+ $("#results").text(str);
+ 结果:
+ width=1680&height=1050
+  
+  
   
