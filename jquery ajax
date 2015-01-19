@@ -1,3 +1,4 @@
+http://www.cnblogs.com/yeer/archive/2009/07/23/1529460.html
 1，load(url,[data],[callback]):载入远程html文件代码并插入至dom中。
   url(String)---请求的html页的url地址。
   data(Map)---（可选参数）发送至服务器的key/value数据。
@@ -44,3 +45,10 @@ $.post("Ajax.aspx",{Action:"post",Name:"test"},function(data,textstatus){
 如果你设置了请求的格式为"json"，此时你没有设置Response回来的ContentType 为：Response.ContentType = "application/json"; 那么你将无法捕捉到返回的数据。
 
 注意一下，alert(data.result); 由于设置了Accept报头为“json”，这里返回的data就是一个对象，并不需要用eval()来转换为对象。
+
+4,$.getScript(url,[callback])---通过GET方式请求载入并执行一个javascript文件。
+参数：
+  url(String)---待载入JS文件地址。
+  callback[Function]---（可选）成功载入后回调函数。
+  
+可以调用跨域js文件  
