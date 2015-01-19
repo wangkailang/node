@@ -1,0 +1,46 @@
+1，load(url,[data],[callback]):载入远程html文件代码并插入至dom中。
+  url(String)---请求的html页的url地址。
+  data(Map)---（可选参数）发送至服务器的key/value数据。
+  callback(Callback)---（可选参数）请求完成时（不需要success）的回调函数。
+这个方法使用GET方式来传递。如果[data]参数有传递数据进去，会自动转换为POST方式。
+用法：动态加载一些html文件，例如表单。
+示例代码：
+$('.ajax.load').load("http://...",function(responseText,textStatus,XMLHttpRequest){
+  this;   //这里this指向的是当前的dom对象，即$('.ajax.load')[0]
+  //responseText  请求返回的内容
+  //textStatus  请求内容：success,error
+  //XMLHttpRequest  XMLHttprequest对象
+});
+
+2，$.get(url,[data],[callback]);使用GET方式来进行异步请求
+参数：
+  url(String)---发送url地址
+  data[Map]---（可选）要发送给服务器的数据，以key/value的键值对形式表示，会作为QueryString附加到请求url中。
+  callback[Function]---（可选）载入成功时回调函数（只有Response的返回状态是success才是调用该方法）。
+这是一个简单的GET请求gongneng以取代复杂$.ajax。请求成功时可调出回调函数。如果需要在出错时执行函数，请使用$.ajax。示例代码：
+$.ajax("./Ajax.aspx",{Action:"get",Name:"test"},function(data,textStatus){
+  //返回的data可以是xmlDoc,jsonObj,html,text,等
+  this;//在这里this指向的是Ajax请求的选项配置信息
+  alert(data);
+  
+  //textstatus  请求状态
+});
+
+3，$.post(url,[data],[callback],[type]);使用POST方式来进行异步请求
+参数：
+  url(String)---发送url地址
+  data[Map]---（可选）要发送给服务器的数据，以key/value的键值对形式表示，会作为QueryString附加到请求url中。
+  callback[Function]---（可选）载入成功时回调函数（只有Response的返回状态是success才是调用该方法）。
+  type[String]---（可选）官方的说明是：Type of data to be sent。其实为客户端请求的类型（JSON,XML等）。
+这是一个简单的 POST 请求功能以取代复杂 $.ajax 。请求成功时可调用回调函数。如果需要在出错时执行函数，请使用 $.ajax。示例代码：
+Response.ContentType = "application/json";来自服务器的消息）'}");
+
+$.post("Ajax.aspx",{Action:"post",Name:"test"},function(data,textstatus){
+  // data 可以是 xmlDoc, jsonObj, html, text, 等等.
+  //this; // 这个Ajax请求的选项配置信息，请参考jQuery.get()说到的this
+  alert(data.result);
+},"json");
+
+如果你设置了请求的格式为"json"，此时你没有设置Response回来的ContentType 为：Response.ContentType = "application/json"; 那么你将无法捕捉到返回的数据。
+
+注意一下，alert(data.result); 由于设置了Accept报头为“json”，这里返回的data就是一个对象，并不需要用eval()来转换为对象。
