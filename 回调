@@ -1,1 +1,23 @@
 回调 —— 将一个函数作为“参数”传递给另一个函数
+举例：
+$('p').hide('slow',function(){
+  alert('the paragraph is now hidden');
+});
+先执行hide，然后alert;
+
+剖析回调
+function haveBreakfast(food, drank, callback) {
+  console.log('Having breakfast of '+food+','+drank);
+  //如果回调函数存在，那么调用这个函数
+  if(callback && typeof(callback) === "function") {
+    callback();
+  }
+}
+
+使用haveBreakfast函数
+haveBreakfast('toast', 'coffee', function(){
+  console.log('Finished breakfast,Time to go to work !');
+});
+显示：
+  Having breakfast of toast,coffee
+  Finished breakfast,Time to go to work ! 
